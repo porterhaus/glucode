@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
   ## Active record relationships
 
   ## Validations
+  validates_presence_of :name
+  validates :auth_token, uniqueness: true
 
   ## Callbacks
   before_create :set_auth_token

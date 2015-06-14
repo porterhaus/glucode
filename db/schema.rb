@@ -11,7 +11,40 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150613211147) do
+ActiveRecord::Schema.define(version: 20150614190653) do
+
+  create_table "bgtests", force: :cascade do |t|
+    t.integer  "value"
+    t.string   "category"
+    t.string   "time_of_day"
+    t.text     "comments"
+    t.integer  "user_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "bgtests", ["user_id"], name: "index_bgtests_on_user_id"
+
+  create_table "injections", force: :cascade do |t|
+    t.float    "num_of_units_taken"
+    t.string   "category"
+    t.integer  "user_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
+
+  add_index "injections", ["user_id"], name: "index_injections_on_user_id"
+
+  create_table "meals", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "carbohydrates"
+    t.text     "description"
+    t.integer  "user_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "meals", ["user_id"], name: "index_meals_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -28,6 +61,7 @@ ActiveRecord::Schema.define(version: 20150613211147) do
     t.string   "auth_token"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "name"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
