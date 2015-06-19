@@ -1,4 +1,4 @@
-class API::ApiController < ActionController::Base
+class API::ApiController < ApplicationController
   include Authenticable
   include ActionController::HttpAuthentication::Basic::ControllerMethods
 

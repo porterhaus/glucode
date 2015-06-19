@@ -35,6 +35,7 @@ gem 'jbuilder', '~> 2.0'
 #Added
 gem 'devise'
 gem 'pundit'
+gem 'rack-cors', :require=>'rack/cors'
 gem 'simple_form'
 gem 'has_secure_token'
 gem 'active_model_serializers'
