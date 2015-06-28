@@ -7,7 +7,8 @@ class API::BgtestsController < API::ApiController
   end
 
   def show
-    @bgtest = Bgtest.find(param[:id])
+    @bgtest = Bgtest.find(params[:id])
+    render json: @bgtest, status: 200
   end
 
   def create

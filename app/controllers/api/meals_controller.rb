@@ -8,6 +8,7 @@ class API::MealsController < API::ApiController
 
   def show
     @meal = Meal.find(param[:id])
+    render json: @meal, status: 200
   end
 
   def create

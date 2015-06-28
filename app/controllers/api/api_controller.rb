@@ -1,5 +1,6 @@
 class API::ApiController < ApplicationController
   include Authenticable
+
   include ActionController::HttpAuthentication::Basic::ControllerMethods
 
   respond_to :json

@@ -4,6 +4,7 @@ class API::AuthController < API::ApiController
 
   def signin
     authenticate_with_http_basic do | email, password |
+      # TODO => Need to catch the error if no user is found. It's throwing a 500 interval server error.
       @user = User.find_by(email: email)
       if @user.present?
         if @user.valid_password? password

@@ -8,6 +8,7 @@ class API::InjectionsController < API::ApiController
 
   def show
     @injection = Injection.find(param[:id])
+    render json: @injection, status: 200
   end
 
   def create

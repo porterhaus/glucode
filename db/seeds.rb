@@ -27,6 +27,24 @@ users = User.all
                    "After dinner",
                    "Snack"].sample,
     category: "smbg",
+    comments: Faker::Lorem.paragraph,
+    user: users.sample
+  )
+end
+
+50.times do
+  Injection.create!(
+    num_of_units_taken: [Faker::Number.number(1), Faker::Number.number(2)].sample,
+    category: ["basal", "bolus"].sample,
+    user: users.sample
+  )
+end
+
+50.times do
+  Meal.create!(
+    name: ["breakfast", "lunch", "dinner", "snack"].sample,
+    carbohydrates: [Faker::Number.number(2), Faker::Number.number(3)].sample,
+    description: Faker::Lorem.paragraph,
     user: users.sample
   )
 end
