@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   # devise_for :users, :controllers => {} <= This conflicts with the mapping for the API.
 
   root to: 'site#index'
+  get "about" => 'site#about', as: :about
 
   namespace :api, path: '/', constraints: { subdomain: 'api' } do
     devise_for :users, :skip => [:sessions], :controllers => { registrations: 'api/registrations' }

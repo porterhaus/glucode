@@ -31,7 +31,7 @@ class API::MealsController < API::ApiController
   end
 
   def destroy
-    @meal = @meal.find(params[:id])
+    @meal = Meal.find(params[:id])
     @meal.destroy
     head 204
   end
