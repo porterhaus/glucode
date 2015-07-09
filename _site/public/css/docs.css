@@ -18,7 +18,8 @@
 .hero img {
   margin: 0 auto;
   max-width: 100%;
-  height: auto;
+  max-height: 581px;
+  border-radius: 0 !important;
 }
 .hero .red {
   color: #F26C68;
