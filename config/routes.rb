@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   root to: 'site#index'
   get "about" => 'site#about', as: :about
 
-  namespace :api, path: '/', constraints: { subdomain: 'api' } do
+  namespace :api do
     devise_for :users, :skip => [:sessions], :controllers => { registrations: 'api/registrations' }
     namespace :auth do
       get 'signin'
