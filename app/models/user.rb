@@ -11,14 +11,14 @@ class User < ActiveRecord::Base
   validates :auth_token, uniqueness: true
 
   ## Callbacks
-  before_create :set_auth_token
+  before_create :set_auth_token, :set_user_role
 
   ## Roles
   #  Possibilities: { patient, caregiver, friend/follower }
   #  This will be an open when creating a new User.
-  # => def set_user_role
-  # =>     self.role = "patient"
-  # => end
+  def set_user_role
+    self.role = "patient"
+  end
 
   def set_auth_token
     self.auth_token = generate_auth_token
