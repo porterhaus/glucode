@@ -5,6 +5,9 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   ## Active record relationships
+  has_many :bgtests
+  has_many :meals
+  has_many :injections
 
   ## Validations
   validates_presence_of :name
@@ -15,7 +18,8 @@ class User < ActiveRecord::Base
 
   ## Roles
   #  Possibilities: { patient, caregiver, friend/follower }
-  #  This will be an open when creating a new User.
+  #  This will be an option when creating a new User? As part of the sign-up process.
+  #  Should add as an option for both manually or programmatically.
   def set_user_role
     self.role = "patient"
   end
@@ -30,5 +34,4 @@ class User < ActiveRecord::Base
       break token unless self.class.exists?(auth_token: token)
     end
   end
-
 end
