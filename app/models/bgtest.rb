@@ -1,5 +1,7 @@
 class Bgtest < ActiveRecord::Base
   belongs_to :user
+  has_many :meals, through: :user
+  has_many :injections, through: :user
 
   before_create :set_default_category
 
