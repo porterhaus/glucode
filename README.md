@@ -6,7 +6,7 @@ The project is on-going and the goal is to build a core API that will implement 
 
 ## Development
 
-No Comments.
+Implemented using the Ruby on Rails framework. Utilizes token-based authentication to maintain stateless communication. The documentation site can be found here: <http://porterhaus.github.io/glucode/> 
 
 
 ## Author
