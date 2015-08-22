@@ -11,7 +11,7 @@ method-title: auth/signin
 
 #### URL STRUCTURE
 {% highlight php %}
-https://api.glucode.com/signin
+https://glucode.com/api/auth/signin
 {% endhighlight %}
 
 #### HTTP METHOD
