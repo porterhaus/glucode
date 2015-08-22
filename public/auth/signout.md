@@ -11,7 +11,7 @@ method-title: auth/signout
 
 #### URL STRUCTURE
 {% highlight php %}
-https://api.glucode.com/signout
+https://glucode.com/api/auth/signout
 {% endhighlight %}
 
 #### HTTP METHOD
