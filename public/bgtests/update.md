@@ -11,7 +11,7 @@ method-title: bgtests/update
 
 #### URL STRUCTURE
 {% highlight php %}
-https://api.glucode.com/bgtests/:id
+https://glucode.com/api/bgtests/:id
 {% endhighlight %}
 
 #### HTTP METHOD
