@@ -11,7 +11,7 @@ method-title: injections/delete
 
 #### URL STRUCTURE
 {% highlight php %}
-https://api.glucode.com/injections/:id
+https://glucode.com/api/injections/:id
 {% endhighlight %}
 
 #### HTTP METHOD
