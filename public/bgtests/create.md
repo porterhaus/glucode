@@ -11,7 +11,7 @@ method-title: bgtests/create
 
 #### URL STRUCTURE
 {% highlight php %}
-https://api.glucode.com/bgtests
+https://glucode.com/api/bgtests
 {% endhighlight %}
 
 #### HTTP METHOD
