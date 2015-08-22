@@ -1,6 +1,6 @@
-# Glucode aPI
+# Glucode API
 
-This site contains the documentation for the github project glucode I created as a project while mentoring at Bloc.io.
+Capstone project started while mentoring at Bloc.io. I have been a Type I diabetic for 20 years. I am insulin dependent and currently use the Omni Pod pump system. My goal was to build a simple API that I can use to catalog my blood glucose logs, carbohydrate intake and insulin injections. I am building an app called METER that will be utilize the API. 
 
 ## Development
 
