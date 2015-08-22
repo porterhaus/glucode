@@ -11,7 +11,7 @@ method-title: meals/delete
 
 #### URL STRUCTURE
 {% highlight php %}
-https://api.glucode.com/bgtests/:id
+https://glucode.com/api/meals/:id
 {% endhighlight %}
 
 #### HTTP METHOD
