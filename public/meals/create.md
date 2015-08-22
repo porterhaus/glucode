@@ -11,7 +11,7 @@ method-title: meals/create
 
 #### URL STRUCTURE
 {% highlight php %}
-https://api.glucode.com/meals
+https://glucode.com/api/meals
 {% endhighlight %}
 
 #### HTTP METHOD
