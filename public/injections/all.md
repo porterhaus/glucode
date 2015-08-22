@@ -11,7 +11,7 @@ method-title: injections/all
 
 #### URL STRUCTURE
 {% highlight php %}
-https://api.glucode.com/injections
+https://glucode.com/api/injections
 {% endhighlight %}
 
 #### HTTP METHOD
