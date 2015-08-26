@@ -6,12 +6,10 @@ class API::AuthController < API::ApiController
     authenticate_with_http_basic do | email, password |
       # TODO => Need to catch the error if no user is found. It's throwing a 500 interval server error.
       @user = User.find_by(email: email)
-      if @user.present?
-        if @user.valid_password? password
+      if (@user.present? && (@user.valid_password? password))
           render json: { authenticated_user: @user }, status: 200
-        end
       else
-        render json: { errors: @user.errors }, status: 401
+        render json: { errors: 'Invalid username and/or password.' }, status: 401
       end
     end
   end
