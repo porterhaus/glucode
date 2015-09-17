@@ -6,9 +6,10 @@ class API::AuthController < API::ApiController
     authenticate_with_http_basic do | email, password |
       @user = User.find_by(email: email)
       if (@user.present? && (@user.valid_password? password))
-          render json: { authenticated_user: @user }, status: 200
+        render json: { authenticated_user: @user }, status: 200
       else
         render json: { errors: 'Invalid username and/or password.' }, status: 401
+        return
       end
     end
   end

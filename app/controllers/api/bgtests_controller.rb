@@ -3,6 +3,7 @@ class API::BgtestsController < API::ApiController
 
   def index
     @bgtests = Bgtest.where("user_id = ?", current_user)
+    @bgtests.group_by(&:group_by_criteria).map {|k,v| [k, v.length]}.sort
     render json: @bgtests, status: 200
   end
 
