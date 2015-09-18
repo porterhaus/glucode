@@ -1,19 +1,22 @@
-class API::AuthController < API::ApiController
+class API::SessionsController < API::ApiController
 
-  before_action :authenticate_with_token!, only: :logout
+  before_action :authenticate_with_token!, only: :destroy
 
-  def signin
+  skip_before_filter :verify_authenticity_token, only: [:create, :destroy]
+
+  def create
     authenticate_with_http_basic do | email, password |
       @user = User.find_by(email: email)
       if (@user.present? && (@user.valid_password? password))
-        render json: { authenticated_user: @user }, status: 200
+        sign_in @user, store: false
+        render json: { authenticated_user: @user }, status: 200, location: [:api, @user]
       else
-        render json: { errors: 'Invalid username and/or password.' }, status: 401
+        render json: { errors: 'Invalid email address and/or password.' }, status: 422
       end
     end
   end
 
-  def signout
+  def destroy
     @user = User.find_by(auth_token: request.headers['Authorization'])
 
     if @user.present?

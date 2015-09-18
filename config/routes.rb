@@ -12,6 +12,7 @@ Rails.application.routes.draw do
       get 'signin'
       get 'signout'
     end
+    resources :sessions, :only => [:create, :destroy]
     resources :users, :only => [:create, :update, :destroy, :show]
     resources :bgtests
     resources :injections
