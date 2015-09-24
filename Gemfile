@@ -38,6 +38,7 @@ gem 'rack-cors', :require=>'rack/cors'
 gem 'simple_form'
 gem 'has_secure_token'
 gem 'active_model_serializers'
+gem 'public_activity'
 
 group :doc do
   gem 'sdoc', '~> 0.4.0', group: :doc

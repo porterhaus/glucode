@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   has_many :bgtests
   has_many :meals
   has_many :injections
+  has_many :activities
 
   ## Validations
   validates_presence_of :name
@@ -34,4 +35,9 @@ class User < ActiveRecord::Base
       break token unless self.class.exists?(auth_token: token)
     end
   end
+
+  def recent_activities(limit)
+    activities.order('created_at DESC').limit(limit)
+  end
+
 end

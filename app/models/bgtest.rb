@@ -4,6 +4,7 @@ class Bgtest < ActiveRecord::Base
   has_many :injections, through: :user
 
   #before_create :set_default_category
+  after_create :create_activity
 
   default_scope { order('created_at DESC') }
 
@@ -14,4 +15,16 @@ class Bgtest < ActiveRecord::Base
   def group_by_criteria
     created_at.to_date.to_s(:db)
   end
+
+  private
+
+  def create_activity
+    Activity.create(
+      subject: self,
+      name: 'test_created',
+      direction: 'by',
+      user: user
+    )
+  end
+
 end
