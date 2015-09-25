@@ -21,7 +21,8 @@ class Bgtest < ActiveRecord::Base
   def create_activity
     Activity.create(
       subject: self,
-      name: 'test_created',
+      value: self.value,
+      name: 'created',
       direction: 'by',
       user: user
     )

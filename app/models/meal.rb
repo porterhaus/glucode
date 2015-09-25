@@ -9,7 +9,7 @@ class Meal < ActiveRecord::Base
   def create_activity
     Activity.create(
       subject: self,
-      name: 'meal_created',
+      name: 'created',
       direction: 'by',
       user: user
     )

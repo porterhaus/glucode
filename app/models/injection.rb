@@ -9,7 +9,7 @@ class Injection < ActiveRecord::Base
   def create_activity
     Activity.create(
       subject: self,
-      name: 'injection_created',
+      name: 'created',
       direction: 'by',
       user: user
     )
