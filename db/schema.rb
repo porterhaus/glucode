@@ -11,19 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150925180054) do
+ActiveRecord::Schema.define(version: 20150924201957) do
 
   create_table "activities", force: :cascade do |t|
-<<<<<<< HEAD
-    t.integer  "subject_id"
-    t.string   "subject_type"
-    t.string   "name",         null: false
-    t.string   "direction",    null: false
-    t.integer  "user_id",      null: false
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-    t.integer  "value"
-=======
     t.integer  "trackable_id"
     t.string   "trackable_type"
     t.string   "name",           null: false
@@ -32,7 +22,6 @@ ActiveRecord::Schema.define(version: 20150925180054) do
     t.integer  "value",          null: false
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
->>>>>>> user-activity-feed
   end
 
   add_index "activities", ["trackable_id", "trackable_type"], name: "index_activities_on_trackable_id_and_trackable_type"

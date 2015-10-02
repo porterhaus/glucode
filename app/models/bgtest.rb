@@ -22,14 +22,8 @@ class Bgtest < ActiveRecord::Base
 
   def create_activity
     Activity.create(
-<<<<<<< HEAD
-      subject: self,
-      value: self.value,
-      name: 'created',
-=======
       trackable: self,
       name: 'added',
->>>>>>> user-activity-feed
       direction: 'by',
       user: user,
       value: self.value
