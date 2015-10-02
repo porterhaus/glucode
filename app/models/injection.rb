@@ -8,10 +8,16 @@ class Injection < ActiveRecord::Base
 
   def create_activity
     Activity.create(
+<<<<<<< HEAD
       subject: self,
       name: 'created',
+=======
+      trackable: self,
+      name: 'added',
+>>>>>>> user-activity-feed
       direction: 'by',
-      user: user
+      user: user,
+      value: self.num_of_units_taken
     )
   end
 end

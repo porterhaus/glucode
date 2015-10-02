@@ -14,6 +14,7 @@
 ActiveRecord::Schema.define(version: 20150925180054) do
 
   create_table "activities", force: :cascade do |t|
+<<<<<<< HEAD
     t.integer  "subject_id"
     t.string   "subject_type"
     t.string   "name",         null: false
@@ -22,9 +23,19 @@ ActiveRecord::Schema.define(version: 20150925180054) do
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.integer  "value"
+=======
+    t.integer  "trackable_id"
+    t.string   "trackable_type"
+    t.string   "name",           null: false
+    t.string   "direction",      null: false
+    t.integer  "user_id",        null: false
+    t.integer  "value",          null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+>>>>>>> user-activity-feed
   end
 
-  add_index "activities", ["subject_id", "subject_type"], name: "index_activities_on_subject_id_and_subject_type"
+  add_index "activities", ["trackable_id", "trackable_type"], name: "index_activities_on_trackable_id_and_trackable_type"
   add_index "activities", ["user_id"], name: "index_activities_on_user_id"
 
   create_table "bgtests", force: :cascade do |t|

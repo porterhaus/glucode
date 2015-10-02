@@ -8,10 +8,16 @@ class Meal < ActiveRecord::Base
 
   def create_activity
     Activity.create(
+<<<<<<< HEAD
       subject: self,
       name: 'created',
+=======
+      trackable: self,
+      name: 'added',
+>>>>>>> user-activity-feed
       direction: 'by',
-      user: user
+      user: user,
+      value: self.carbohydrates
     )
   end
 end
