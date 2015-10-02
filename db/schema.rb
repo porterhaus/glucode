@@ -14,16 +14,17 @@
 ActiveRecord::Schema.define(version: 20150924201957) do
 
   create_table "activities", force: :cascade do |t|
-    t.integer  "subject_id"
-    t.string   "subject_type"
-    t.string   "name",         null: false
-    t.string   "direction",    null: false
-    t.integer  "user_id",      null: false
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.integer  "trackable_id"
+    t.string   "trackable_type"
+    t.string   "name",           null: false
+    t.string   "direction",      null: false
+    t.integer  "user_id",        null: false
+    t.integer  "value",          null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
-  add_index "activities", ["subject_id", "subject_type"], name: "index_activities_on_subject_id_and_subject_type"
+  add_index "activities", ["trackable_id", "trackable_type"], name: "index_activities_on_trackable_id_and_trackable_type"
   add_index "activities", ["user_id"], name: "index_activities_on_user_id"
 
   create_table "bgtests", force: :cascade do |t|

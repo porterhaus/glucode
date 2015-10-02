@@ -3,6 +3,8 @@ class Bgtest < ActiveRecord::Base
   has_many :meals, through: :user
   has_many :injections, through: :user
 
+  validates :value, numericality: { only_integer: true }
+
   #before_create :set_default_category
   after_create :create_activity
 
@@ -20,10 +22,11 @@ class Bgtest < ActiveRecord::Base
 
   def create_activity
     Activity.create(
-      subject: self,
-      name: 'test_created',
+      trackable: self,
+      name: 'added',
       direction: 'by',
-      user: user
+      user: user,
+      value: self.value
     )
   end
 

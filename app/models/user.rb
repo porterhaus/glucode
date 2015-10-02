@@ -22,7 +22,7 @@ class User < ActiveRecord::Base
   #  This will be an option when creating a new User? As part of the sign-up process.
   #  Should add as an option for both manually or programmatically.
   def set_user_role
-    self.role = "patient"
+    self.role = "Patient"
   end
 
   def set_auth_token
