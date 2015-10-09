@@ -42,7 +42,7 @@ users = User.all
       comments: Faker::Lorem.paragraph,
       user: users.sample
     )
-    bgtest.update_attribute(:created_at, (rand*10).days.ago)
+    bgtest.update_attribute(:created_at, (rand*10).weeks.ago)
     bgtest.save
 
     # Add carbohydrates or Meal data
@@ -52,7 +52,7 @@ users = User.all
       description: Faker::Lorem.paragraph,
       user: users.sample
     )
-    meal.update_attribute(:created_at, (rand*10).days.ago)
+    meal.update_attribute(:created_at, (rand*10).weeks.ago)
     meal.save
 
     # Add bolus data
@@ -61,7 +61,7 @@ users = User.all
       category: ["Basal", "Bolus"].sample,
       user: users.sample
     )
-    injection.update_attribute(:created_at, (rand*10).days.ago)
+    injection.update_attribute(:created_at, (rand*10).weeks.ago)
     injection.save
 
 end

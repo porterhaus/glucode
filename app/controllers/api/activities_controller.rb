@@ -6,4 +6,10 @@ class API::ActivitiesController < API::ApiController
     render json:  @activities, status: 200
   end
 
+  def recent
+    limit = params[:limit]
+    @activites = current_user.recent_activities(limit)
+    render json: @activites, status: 200
+  end
+
 end
