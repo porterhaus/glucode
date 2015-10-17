@@ -36,8 +36,9 @@ class User < ActiveRecord::Base
     end
   end
 
-  def recent_activities(limit)
-    activities.where('created_at >= ?', limit.to_i.days.ago)
+  def recent_activities
+    activities.where('created_at >= ?', 2.weeks.ago)
+    #activities.limit(limit)
   end
 
 end
