@@ -5,7 +5,7 @@ class CreateActivities < ActiveRecord::Migration
       t.string :name, null: false
       t.string :direction, null: false
       t.integer :user_id, null: false
-      t.integer :value, null: false
+      t.float :value, null: false
       t.timestamps null: false
     end
     add_index :activities, [:trackable_id, :trackable_type]
